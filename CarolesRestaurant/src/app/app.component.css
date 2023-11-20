@@ -1,0 +1,48 @@
+body {
+    background-image: url(../assets/bg.jpg) !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.login{
+    width: 40%;
+    padding: 2%;
+    position: absolute;
+    text-align-last: center;
+    text-align: -webkit-center !important;
+    margin-left: 30%;
+    border-radius: 15px;
+    margin-top: 10%;
+    color: #63783d;
+}
+.logo {
+    width: 220px;
+    height: 130px;
+}
+.input {
+    margin-top: 10%;
+}
+input {
+    width: 50%;
+}
+
+p {
+    font-size: 20px;
+    color: #63783d;
+}
+
+a {
+    text-decoration: none;
+    color: #7FA653;
+}
+@media (width < 780px){
+    .login{
+        width: 85%;
+        margin-left: 9%;
+        border-radius: 15px;
+        margin-top: 50%;
+        color: #63783d;
+    }
+    input {
+        width: 90%;
+    }
+}
