@@ -1,0 +1,33 @@
+.nav {
+    background-color: #63783d;
+    width: 100%;
+    height: 13% !important;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+}
+.logo {
+  	width: 170px;
+}
+.ok {
+    top: 20%;
+}
+@media (width < 425px){
+  .logo {
+    width: 145px;
+    position: fixed;
+  }
+}
+@media (width > 426){
+    .logo {
+      width: 250px;
+      position: fixed;
+    }
+  }
+@media(width > 2000){
+    .logo {
+        width: 360px;
+        position: fixed;
+    }
+
+}
