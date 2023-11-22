@@ -1,33 +1,72 @@
 .nav {
-    background-color: #63783d;
+    background: rgb(99,120,61);
+    background: linear-gradient(90deg, rgba(99,120,61,1) 20%, rgba(127,166,83,1) 67%, rgba(153,205,133,1) 100%);
     width: 100%;
     height: 13% !important;
-    position: fixed;
+    position: relative !important;
     display: flex;
     justify-content: center;
 }
 .logo {
-  	width: 170px;
+  	width: 370px;
 }
-.ok {
-    top: 20%;
+.girar {
+    height: 10% !important;
+    margin-top: 4%;
+    border: 2px solid #99CD85  !important;
+}
+.girar img {
+    width: 100%;
+    height: 82vh !important;
+}
+
+.card-group {
+  margin: 2%;
+  border: 2px solid rgb(99,120,61);
+}
+
+a {
+    text-decoration: none;
+    transition: 1.2s;
+}
+
+a img:hover {
+    transform: scale(0.9);
+    opacity: 1;
+}
+
+footer {
+    background: rgb(127,166,83);
+    background: linear-gradient(90deg, rgba(127,166,83,1) 34%, rgba(153,205,133,1) 100%);
+    display: flex;
+}
+
+.veg {
+    width: 150px;
+    height: 150px;
 }
 @media (width < 425px){
   .logo {
-    width: 145px;
-    position: fixed;
+    width: 245px;
   }
+  .girar img {
+    height: 30% !important;
 }
-@media (width > 426){
+
+}
+@media (width < 798px){
     .logo {
       width: 250px;
-      position: fixed;
+    }
+    .girar img {
+        height: 35vh !important;
     }
   }
-@media(width > 2000){
+@media(width > 2000px){
     .logo {
-        width: 360px;
-        position: fixed;
+        width: 460px;
     }
-
+    .nav {
+        height: 10%;
+    }
 }
