@@ -1,8 +1,3 @@
-body {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url(../../assets/bg.jpg);
-}
 .login{
   width: 40%;
   padding: 2%;
@@ -11,12 +6,15 @@ body {
   text-align: -webkit-center !important;
   margin-left: 30%;
   border-radius: 15px;
-  margin-top: 10%;
+  margin-top: 2%;
   color: #63783d;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../../assets/bg2.jpg);
 }
 .logo {
   width: 220px;
-  height: 130px;
+  height: 180px;
 }
 
 input {

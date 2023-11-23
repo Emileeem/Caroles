@@ -1,17 +1,19 @@
-body {
-  background-repeat: no-repeat;
-  background-size: cover;
+.background {
+  background-image: url(../../assets/bg.jpg) !important;
 }
+
 .login{
   width: 40%;
   padding: 2%;
   position: absolute;
-  text-align-last: center;
-  text-align: -webkit-center !important;
   margin-left: 30%;
   border-radius: 15px;
   margin-top: 10%;
   color: #63783d;
+  background-image: url(../../assets/bg.jpg);
+  background-position: 70%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .logo {
   width: 220px;
@@ -21,7 +23,7 @@ body {
   margin-top: 10%;
 }
 input {
-  width: 50%;
+  width: 37%;
 }
 p {
   font-size: 20px;
@@ -32,15 +34,30 @@ a {
   text-decoration: none;
   color: #7FA653;
 }
-@media (width < 780px){
+
+@media (width < 900px){
   .login{
       width: 85%;
       margin-left: 9%;
       border-radius: 15px;
       margin-top: 50%;
       color: #63783d;
+      background-position: 0%;
+      text-align: -webkit-center;
   }
   input {
-      width: 90%;
+      width: 80%;
   }
+}
+
+@media (width > 900px) and (width < 1400px)
+{
+  .login{
+    width: 85%;
+    margin-left: 9%;
+    border-radius: 15px;
+    margin-top: 50%;
+    color: #63783d;
+    background-position: 50%;
+}
 }
