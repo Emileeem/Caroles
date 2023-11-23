@@ -1,0 +1,52 @@
+.nav {
+  background: rgb(99,120,61);
+  background: linear-gradient(90deg, rgba(99,120,61,1) 20%, rgba(127,166,83,1) 67%, rgba(153,205,133,1) 100%);
+  width: 100%;
+  height: 13% !important;
+  position: relative !important;
+  display: flex;
+  justify-content: center;
+}
+.logo {
+  width: 370px;
+}
+
+.buton {
+    position: relative;
+    display: flex;
+    place-content: center;
+}
+.aqui {
+  display: flex;
+  justify-content: space-around;
+}
+.cardss {
+  margin-bottom: 5%;
+}
+.card-img-top {
+  height: 200px;
+}
+@media (width < 425px){
+  .logo {
+    width: 245px;
+  }
+  .girar img {
+    height: 30% !important;
+    }
+    footer {
+      display: none;
+    }
+}
+@media (width < 798px){
+    .logo {
+      width: 250px;
+    }
+  }
+@media(width > 2000px){
+    .logo {
+        width: 460px;
+    }
+    .nav {
+        height: 10%;
+    }
+}
