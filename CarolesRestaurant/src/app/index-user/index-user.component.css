@@ -44,6 +44,22 @@ footer {
 .veg {
     width: 150px;
     height: 150px;
+    margin-left: 5% !important;
+    top: 10%;
+}
+.b {
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  margin-top: 5% !important;
+  margin-left: 35%;
+}
+.text {
+  margin-top: 3%;
+
+}
+div p {
+  font-family: 'Courier New', Courier, monospace;
+  text-align: justify;
 }
 @media (width < 425px){
   .logo {
@@ -51,8 +67,10 @@ footer {
   }
   .girar img {
     height: 30% !important;
-}
-
+    }
+    footer {
+      display: none;
+    }
 }
 @media (width < 798px){
     .logo {
@@ -60,6 +78,9 @@ footer {
     }
     .girar img {
         height: 35vh !important;
+    }
+    footer {
+      display: none;
     }
   }
 @media(width > 2000px){
