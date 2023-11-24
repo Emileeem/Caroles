@@ -1,0 +1,14 @@
+.body {
+    background-color: #044B25;
+    color: #FCF1B7;
+    width: 300px;
+    height: 200px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    border: 3px solid #E5871E;
+}
+.code {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 30px;
+
+}
