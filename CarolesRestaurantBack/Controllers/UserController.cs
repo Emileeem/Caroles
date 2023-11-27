@@ -72,25 +72,6 @@ public class UserController : ControllerBase
         throw new NotImplementedException();
     }
 
-    // [HttpGet("image")]
-    // [EnableCors("DefaultPolicy")]
-    // public async Task<IActionResult> GetImage(
-    //     int photoId,
-    //     [FromServices]ISecurityService security,
-    //     [FromServices]CarolesContext ctx)
-    // {
-    //     var query =
-    //         from image in ctx.Imagems
-    //         where image.Id == photoId
-    //         select image;
-        
-    //     var photo = await query.FirstOrDefaultAsync();
-    //     if (photo is null)
-    //         return NotFound();
-
-    //     return File(photo.Foto, "image/jpeg");
-    // }
-
     [DisableRequestSizeLimit]
     [HttpPut("image")]
     [EnableCors("DefaultPolicy")]
@@ -121,19 +102,15 @@ public class UserController : ControllerBase
         await file.CopyToAsync(ms);
         var data = ms.GetBuffer();
 
-        Imagem img = new Imagem();
-        img.Foto = data;
 
-        DonOrgDbContext ctx = new DonOrgDbContext();
-        ctx.Add(img);
+        CarolesContext ctx = new CarolesContext();
         await ctx.SaveChangesAsync();
         
         var query =
-            from user in ctx.Usuarios
+            from user in ctx.Clientes
             where user.Id == userId
             select user;
         var loggedUser = query.FirstOrDefault();
-        loggedUser.ImagemId = img.Id;
 
         await ctx.SaveChangesAsync();
 
