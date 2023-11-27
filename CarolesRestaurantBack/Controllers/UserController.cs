@@ -41,7 +41,6 @@ public class UserController : ControllerBase
         
         var jwt = await security.GenerateJwt(new {
             id = loggedUser.Id,
-            photoId = loggedUser.ImagemId
         });
         
         return Ok(new { jwt });
@@ -90,10 +89,6 @@ public class UserController : ControllerBase
         if (userOjb is null)
             return Unauthorized();
         var userId = userOjb.id;
-
-        var files = Request.Form.Files;
-        if (files is null || files.Count == 0)
-            return BadRequest();
         
         var file = Request.Form.Files[0];
         if (file.Length < 1)
