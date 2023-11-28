@@ -6,11 +6,12 @@ import { ApiClientService } from './api-client.service';
   providedIn: 'root'
 })
 export class ClientServiceService {
+  login: any;
   constructor(private http: ApiClientService) { }
 
   register(data: ClientData)
   {
-    this.http.post('user', data)
+    this.http.post('/user/register', data)
       .subscribe(response => console.log(response))
   }
 }

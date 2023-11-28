@@ -7,7 +7,6 @@ using Microsoft.Extensions.DependencyInjection;
 
 using CarolesRestaurantBack.Model;
 using CarolesRestaurantBack.Services;
-using CarolesRestaurantBack.Model;
 
 var builder = WebApplication.CreateBuilder(args);
 

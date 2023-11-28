@@ -58,10 +58,9 @@ public class UserController : ControllerBase
     {
         var errors = new List<string>();
         if (user is null || user.Login is null)
-            errors.Add("É necessário informar um login.");
+            errors.Add("É necessário informar um Email.");
         if (user.Login.Length < 5)
             errors.Add("O Login deve conter ao menos 5 caracteres.");
-
         if (errors.Count > 0)
             return BadRequest(errors);
 
