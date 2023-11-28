@@ -27,18 +27,7 @@ public class SecurityService : ISecurityService
         return hash;
     }
 
-    public async Task<string> GenerateJwt<T>(T obj)
-    {
-        string password = await getPassword();
-        var base64Password = toBase64(password);
-        var jwt = getJwt(obj, base64Password);
-        return jwt;
-    }
-
-    public Task<string> ValidateJwt<T>(string jwt)
-    {
-        throw new NotImplementedException();
-    }
+    
 
     private byte[] getRandomArray()
     {
@@ -79,18 +68,6 @@ public class SecurityService : ISecurityService
     {
         string json = JsonSerializer.Serialize(obj);
         return json;
-    }
-    private string getJwt<T> (T obj, string password)
-    {
-        var header = getJsonHeader();
-        var headerBase64 = toBase64(header);
-
-        var payload = getJsonPayload(obj);
-        var payloadBase64 = toBase64(payload);
-
-        var signature = getSignature(headerBase64, payloadBase64, password);
-
-        return $"{headerBase64}.{payloadBase64}.{signature}";
     }
     private string getJsonHeader()
     {

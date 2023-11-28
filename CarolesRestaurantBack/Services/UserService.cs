@@ -38,6 +38,6 @@ public class UserService : IUserService
             where u.Nome == login
             select u;
 
-        return await query.FirstOrDefault();
+        return await query.FirstOrDefaultAsync();
     }
 }
