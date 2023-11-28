@@ -3,25 +3,25 @@
 
 	<div class="input mb-3">
 		<p class="text">Nome:</p>
-		<input type="text" class="form-control shadow inputt" aria-label="default input example">
+		<input type="text" class="form-control shadow inputt" aria-label="default input example" ngModel="name" />
 
 		<p class="text">Sobrenome:</p>
-		<input type="text" class="form-control shadow inputt" aria-label="default input example">
+		<input type="text" class="form-control shadow inputt" aria-label="default input example" ngModel="surname" />
 
 		<p class="text">Data de nascimento:</p>
-		<input type="date" class="form-control shadow inputt" aria-label="default input example">
+		<input type="date" class="form-control shadow inputt" aria-label="default input example" ngModel="birthday" />
 
 		<p class="text">Email:</p>
-		<input type="email" class="form-control shadow inputt" aria-label="default input example">
+		<input type="email" class="form-control shadow inputt" aria-label="default input example" ngModel="email" />
 
 		<p class="text">Senha:</p>
-		<input type="password" class="form-control shadow" id="" aria-label="default input example">
+		<input type="password" class="form-control shadow" id="" aria-label="default input example" ngModel="password" />
 
 		<p class="text">Confirmar Senha:</p>
-		<input type="password" class="form-control shadow inputt" aria-label="default input example">
+		<input type="password" class="form-control shadow inputt" aria-label="default input example" ngModel="repeatPassword" />
 
 	</div>
-	<button class="btn btn-success shadow" style="margin: 4%;"> Criar Usuário </button><br />
+	<button class="btn btn-success shadow" style="margin: 4%;" (click)="create()"> Criar Usuário </button><br />
 
 	<a href="/"> Voltar </a>
 </div>
