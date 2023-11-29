@@ -1,0 +1,38 @@
+namespace CarolesRestaurantBack.Services;
+
+using DTO;
+using Model;
+
+using Microsoft.EntityFrameworkCore;
+
+public class ProductService : IProductService
+{
+    CarolesContext ctx;
+    public ProductService(CarolesContext ctx)
+    {
+        this.ctx = ctx;
+    }
+    public async Task Create(ProdutoData data)
+    {
+        Produto produto = new Produto();
+
+        produto.Nome = data.Name;
+        produto.Preco = data.Price;
+        produto.Foto = data.Photo;
+        produto.Descricao = data.Description;
+        produto.Categoria = data.Category;
+
+        this.ctx.Add(produto);
+        await this.ctx.SaveChangesAsync();
+    }
+
+    public async Task<List<Produto>> GetByCategoria(string categoria)
+    {
+        var query =
+            from p in this.ctx.Produtos
+            where p.Categoria == categoria
+            select p;
+
+        return await query.ToListAsync();
+    }
+}

@@ -8,5 +8,5 @@ using Model;
 public interface IProductService
 {
     Task Create(ProdutoData data);
-    Task<Produto> GetByCategoria(string categoria);
+    Task<List<Produto>> GetByCategoria(string categoria);
 }

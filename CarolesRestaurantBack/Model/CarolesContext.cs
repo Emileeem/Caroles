@@ -33,7 +33,7 @@ public partial class CarolesContext : DbContext
     {
         modelBuilder.Entity<Cliente>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Cliente__3214EC27942A3D51");
+            entity.HasKey(e => e.Id).HasName("PK__Cliente__3214EC27DE7990C5");
 
             entity.ToTable("Cliente");
 
@@ -58,7 +58,7 @@ public partial class CarolesContext : DbContext
 
         modelBuilder.Entity<Codigo>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Codigos__3214EC272C354571");
+            entity.HasKey(e => e.Id).HasName("PK__Codigos__3214EC2784ECB8DE");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.CodigoAleat)
@@ -68,7 +68,7 @@ public partial class CarolesContext : DbContext
 
         modelBuilder.Entity<Funcionario>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Funciona__3214EC2785433D86");
+            entity.HasKey(e => e.Id).HasName("PK__Funciona__3214EC27024F99EC");
 
             entity.ToTable("Funcionario");
 
@@ -86,7 +86,7 @@ public partial class CarolesContext : DbContext
 
         modelBuilder.Entity<PedidoCliente>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__PedidoCl__3214EC274773F388");
+            entity.HasKey(e => e.Id).HasName("PK__PedidoCl__3214EC2735C15BE9");
 
             entity.ToTable("PedidoCliente");
 
@@ -102,9 +102,12 @@ public partial class CarolesContext : DbContext
 
         modelBuilder.Entity<Produto>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Produtos__3214EC2789885F71");
+            entity.HasKey(e => e.Id).HasName("PK__Produtos__3214EC27189047D5");
 
             entity.Property(e => e.Id).HasColumnName("ID");
+            entity.Property(e => e.Categoria)
+                .HasMaxLength(15)
+                .IsUnicode(false);
             entity.Property(e => e.Descricao)
                 .HasMaxLength(500)
                 .IsUnicode(false);

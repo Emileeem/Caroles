@@ -15,6 +15,8 @@ public partial class Produto
 
     public string Descricao { get; set; } = null!;
 
+    public string Categoria { get; set; } = null!;
+
     public int CodigosId { get; set; }
 
     public virtual Codigo Codigos { get; set; } = null!;
