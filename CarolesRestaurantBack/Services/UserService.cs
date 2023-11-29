@@ -39,7 +39,7 @@ public class UserService : IUserService
     {   
         var query =
             from u in this.ctx.Clientes
-            where u.Nome == login
+            where u.Email == login
             select u;
 
         return await query.FirstOrDefaultAsync();

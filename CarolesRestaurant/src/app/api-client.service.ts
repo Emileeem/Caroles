@@ -13,4 +13,8 @@ export class ApiClientService {
     return this.http
       .post(this.backend + url, obj)
   }
+  get(url:string, obj: any) {
+    return this.http
+      .get(this.backend + url, obj)
+  }
 }

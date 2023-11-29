@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using System;
 using System.Net;
 using System.Net.Http;
@@ -7,11 +8,13 @@ using Microsoft.Extensions.DependencyInjection;
 
 using CarolesRestaurantBack.Model;
 using CarolesRestaurantBack.Services;
+using Trevisharp.Security.Jwt;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddScoped<CarolesContext>();
+builder.Services.AddSingleton<CryptoService>();
 builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddSingleton<ISecurityService, SecurityService>();
 

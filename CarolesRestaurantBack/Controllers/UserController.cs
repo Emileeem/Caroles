@@ -28,9 +28,11 @@ public class UserController : ControllerBase
         [FromServices]ISecurityService security,
         [FromServices]CryptoService crypto)
     {
+        System.Console.WriteLine("PORRAAAAAA");
         var loggedUser = await service
             .GetByLogin(user.Login);
         
+        Console.WriteLine(loggedUser);
         if (loggedUser == null)
             return Unauthorized("Usuário não existe.");
         
@@ -45,9 +47,9 @@ public class UserController : ControllerBase
             id = loggedUser.Id,
         });
         
-        var value = crypto.Validate<JwtPayload>(jwt);
+        // var value = crypto.Validate<JwtPayload>(jwt);
         
-        return Ok(new { value });
+        return Ok(new { jwt });
     }
 
     [HttpPost("register")]
