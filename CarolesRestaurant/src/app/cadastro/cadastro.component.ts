@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Data } from '@angular/router';
+import { Router } from '@angular/router';
 import { ClientServiceService } from '../client-service.service';
 import { FormsModule } from '@angular/forms';
 
@@ -19,7 +19,8 @@ export class CadastroComponent {
   password: string = ""
   repeatPassword: string = ""
 
-  constructor(private client: ClientServiceService) {}
+  constructor(private client: ClientServiceService,
+    private router: Router ) {}
 
   create()
   {
@@ -32,6 +33,7 @@ export class CadastroComponent {
         login: this.email,
         password: this.password,
       })
+      this.router.navigate([''])
     }
     else
     {

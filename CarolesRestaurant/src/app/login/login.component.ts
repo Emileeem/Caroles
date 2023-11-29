@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ClientServiceService } from '../client-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,8 @@ import { ClientServiceService } from '../client-service.service';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  constructor (private client: ClientServiceService) { }
+  constructor (private client: ClientServiceService,
+    private router: Router ) { }
 
   email: string = ""
   password: string = ""
@@ -27,7 +29,7 @@ export class LoginComponent {
       }
       else
       {
-        
+        this.router.navigate(['menu'])
       }
     })
   }

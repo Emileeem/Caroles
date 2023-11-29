@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 
 namespace CarolesRestaurantBack.Services;
 
+using System;
 using DTO;
 using Model;
 
@@ -21,7 +22,10 @@ public class UserService : IUserService
         Cliente cliente = new Cliente();
         var salt = await security.GenerateSalt();
 
-        cliente.Nome = data.Login;
+        cliente.Email = data.Login;
+        cliente.DataNasc = data.Birthday;
+        cliente.Sobrenome = data.Surname;
+        cliente.Nome = data.Name;
         cliente.Senha = await security.HashPassword(
             data.Password, salt
         );

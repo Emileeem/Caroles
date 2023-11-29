@@ -57,13 +57,21 @@ public class UserController : ControllerBase
         [FromServices]IUserService service)
     {
         var errors = new List<string>();
-        if (user is null || user.Login is null)
-            errors.Add("É necessário informar um Email.");
-        if (user.Login.Length < 5)
-            errors.Add("O Login deve conter ao menos 5 caracteres.");
+
+        Console.WriteLine(user.Login);
+        Console.WriteLine(user.Name);
+        Console.WriteLine(user.Surname);
+        Console.WriteLine(user.Birthday);
+        
+        if(user.Birthday >= DateTime.Today)
+            errors.Add("Insira uma data válida.");
+
+        if (user is null || user.Login is null || user.Name is null || user.Surname is null)
+            errors.Add("É necessário informar todos os campos pedidos.");
+      
         if (errors.Count > 0)
             return BadRequest(errors);
-
+        
         await service.Create(user);
         return Ok();
     }
