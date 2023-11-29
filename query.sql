@@ -23,10 +23,9 @@ go
 
 create table Funcionario(
 	ID int identity primary key,
-	Nome varchar(20) not null,
-	Sobrenome varchar(50) not null, 
 	Senha varchar(90) not null,
-	Email varchar (50) not null
+	Email varchar (50) not null,
+	Salt varchar (200) not null,
 );
 go
 create table Codigos(

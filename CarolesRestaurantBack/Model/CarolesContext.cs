@@ -33,7 +33,7 @@ public partial class CarolesContext : DbContext
     {
         modelBuilder.Entity<Cliente>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Cliente__3214EC276501E4C8");
+            entity.HasKey(e => e.Id).HasName("PK__Cliente__3214EC27942A3D51");
 
             entity.ToTable("Cliente");
 
@@ -58,7 +58,7 @@ public partial class CarolesContext : DbContext
 
         modelBuilder.Entity<Codigo>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Codigos__3214EC27A698AFCC");
+            entity.HasKey(e => e.Id).HasName("PK__Codigos__3214EC272C354571");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.CodigoAleat)
@@ -68,7 +68,7 @@ public partial class CarolesContext : DbContext
 
         modelBuilder.Entity<Funcionario>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Funciona__3214EC277B850A9A");
+            entity.HasKey(e => e.Id).HasName("PK__Funciona__3214EC2785433D86");
 
             entity.ToTable("Funcionario");
 
@@ -76,20 +76,17 @@ public partial class CarolesContext : DbContext
             entity.Property(e => e.Email)
                 .HasMaxLength(50)
                 .IsUnicode(false);
-            entity.Property(e => e.Nome)
-                .HasMaxLength(20)
+            entity.Property(e => e.Salt)
+                .HasMaxLength(200)
                 .IsUnicode(false);
             entity.Property(e => e.Senha)
                 .HasMaxLength(90)
-                .IsUnicode(false);
-            entity.Property(e => e.Sobrenome)
-                .HasMaxLength(50)
                 .IsUnicode(false);
         });
 
         modelBuilder.Entity<PedidoCliente>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__PedidoCl__3214EC274ECA900B");
+            entity.HasKey(e => e.Id).HasName("PK__PedidoCl__3214EC274773F388");
 
             entity.ToTable("PedidoCliente");
 
@@ -105,7 +102,7 @@ public partial class CarolesContext : DbContext
 
         modelBuilder.Entity<Produto>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Produtos__3214EC27BD10B0E5");
+            entity.HasKey(e => e.Id).HasName("PK__Produtos__3214EC2789885F71");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.Descricao)
