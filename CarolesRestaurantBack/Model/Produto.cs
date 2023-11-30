@@ -15,6 +15,8 @@ public partial class Produto
 
     public string Categoria { get; set; } = null!;
 
+    public string? Promocao { get; set; }
+
     public int? ImagemId { get; set; }
 
     public int? CodigosId { get; set; }

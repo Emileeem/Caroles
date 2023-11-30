@@ -33,7 +33,7 @@ public partial class CarolesContext : DbContext
     {
         modelBuilder.Entity<Cliente>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Cliente__3214EC27F4E5D3CF");
+            entity.HasKey(e => e.Id).HasName("PK__Cliente__3214EC278018E238");
 
             entity.ToTable("Cliente");
 
@@ -62,7 +62,7 @@ public partial class CarolesContext : DbContext
 
         modelBuilder.Entity<Codigo>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Codigos__3214EC27D304D120");
+            entity.HasKey(e => e.Id).HasName("PK__Codigos__3214EC27005F11DA");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.CodigoAleat)
@@ -72,7 +72,7 @@ public partial class CarolesContext : DbContext
 
         modelBuilder.Entity<Imagem>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Imagem__3214EC279148C072");
+            entity.HasKey(e => e.Id).HasName("PK__Imagem__3214EC27890DEF47");
 
             entity.ToTable("Imagem");
 
@@ -81,7 +81,7 @@ public partial class CarolesContext : DbContext
 
         modelBuilder.Entity<PedidoCliente>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__PedidoCl__3214EC27F53204E8");
+            entity.HasKey(e => e.Id).HasName("PK__PedidoCl__3214EC27471A1A88");
 
             entity.ToTable("PedidoCliente");
 
@@ -97,7 +97,7 @@ public partial class CarolesContext : DbContext
 
         modelBuilder.Entity<Produto>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Produtos__3214EC276D5613B2");
+            entity.HasKey(e => e.Id).HasName("PK__Produtos__3214EC27F4AE1DE0");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.Categoria)
@@ -110,6 +110,9 @@ public partial class CarolesContext : DbContext
                 .HasMaxLength(20)
                 .IsUnicode(false);
             entity.Property(e => e.Preco).HasColumnType("decimal(5, 2)");
+            entity.Property(e => e.Promocao)
+                .HasMaxLength(3)
+                .IsUnicode(false);
 
             entity.HasOne(d => d.Codigos).WithMany(p => p.Produtos)
                 .HasForeignKey(d => d.CodigosId)
