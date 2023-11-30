@@ -28,7 +28,6 @@ public class UserController : ControllerBase
         [FromServices]ISecurityService security,
         [FromServices]CryptoService crypto)
     {
-        System.Console.WriteLine("PORRAAAAAA");
         var loggedUser = await service
             .GetByLogin(user.Login);
         

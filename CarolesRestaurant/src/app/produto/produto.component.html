@@ -7,14 +7,18 @@
 		<input type="text" class="form-control shadow inputt" aria-label="default input example" [(ngModel)]="name" />
 
     <p class="text">Preço:</p>
-    <input type="number" class="form-control shadow inputt" aria-label="default input example" />
+    <input type="number" class="form-control shadow inputt" aria-label="default input example" [(ngModel)]="price" />
 
     <p class="text">Foto:</p>
-    <input type="file" class="form-control shadow inputt mb-5" aria-label="default input example" />
+    <input
+      type="file" #file
+      class="form-control shadow inputt mb-5"
+      aria-label="default input example"
+      (change)="uploadFile(file.files)"/>
 
     <div class="input-group mb-3 mt-4">
       <label class="input-group-text" for="inputGroupSelect01">Categoria</label>
-      <select class="form-select" id="inputGroupSelect01">
+      <select class="form-select" id="inputGroupSelect01" [(ngModel)]="category">
         <option selected disabled>Escolha...</option>
         <option value="Pratos">Pratos</option>
         <option value="Bebidas">Bebidas</option>
@@ -23,8 +27,8 @@
     </div>
 
 		<p class="text">Descrição:</p>
-		<input type="text" class="form-control shadow inputt" aria-label="default input example"  />
+		<input type="text" class="form-control shadow inputt" aria-label="default input example"  [(ngModel)]="description"/>
 
   </div>
-  <button class="btn btn-success shadow" style="margin: 4%;"> Adicionar Produto </button><br />
+  <button class="btn btn-success shadow" style="margin: 4%;" (click)="create()"> Adicionar Produto </button><br />
 </div>
