@@ -27,13 +27,19 @@ create table Codigos(
 	CodigoAleat varchar(9) not null
 ); 
 go
+create table Imagem(
+	ID int identity primary key,
+	Foto varbinary(MAX) not null
+);
+go
 create table Produtos(
 	ID int identity primary key,
 	Nome varchar(20) not null,
 	Preco decimal (5, 2) not null,
-	Foto varbinary(MAX) null,
 	Descricao varchar(500) not null,
 	Categoria varchar(15) not null,
+	Promocao varchar(3) null,
+	ImagemId int references Imagem(ID) null,
 	CodigosId int references Codigos(ID) null
 );
 go
