@@ -9,6 +9,7 @@ namespace CarolesRestaurantBack.Services;
 
 public class SecurityService : ISecurityService
 {
+    
      public async Task<string> GenerateSalt()
     {
         var saltBytes = getRandomArray();
@@ -27,7 +28,37 @@ public class SecurityService : ISecurityService
         return hash;
     }
 
-    
+    public async Task<string> GenerateJwt<T>(T obj)
+    {
+        string password = await getPassword();
+        var base64Password = toBase64(password);
+        var jwt = getJwt(obj, base64Password);
+        return jwt;
+    }
+
+    public async Task<T> ValidateJwt<T>(string jwt)
+    {
+        var data = jwt.Split('.');
+
+        var header = data[0];
+        var payload = data[1];
+        var signature = data[2];
+        var password = await getPassword();
+        var base64Password = toBase64(password);
+
+        var generatedSignature = getSignature(header, payload, base64Password);
+        if (generatedSignature != signature)
+        {
+            return default(T);
+        }
+
+        Console.WriteLine(payload);
+        var payloadBytes = Convert.FromBase64String(payload);
+        var payloadJson = Encoding.UTF8.GetString(payloadBytes);
+        Console.WriteLine(payloadJson);
+        var obj = JsonSerializer.Deserialize<T>(payloadJson);
+        return obj;
+    }
 
     private byte[] getRandomArray()
     {
@@ -87,6 +118,19 @@ public class SecurityService : ISecurityService
         var base64withoutPadding = base64.Replace("=", "");
         return base64withoutPadding;
     }
+    private string getJwt<T>(T obj, string password)
+    {
+        var header = getJsonHeader();
+        var headerBase64 = toBase64(header);
+
+        var payload = getJsonPayload(obj);
+        var payloadBase64 = toBase64(payload);
+
+        var signature = getSignature(headerBase64, payloadBase64, password);
+
+        return $"{headerBase64}.{payloadBase64}.{signature}";
+    }
+    
     private string getSignature(
         string header,
         string payload,
@@ -106,5 +150,5 @@ public class SecurityService : ISecurityService
 
         return signature;
     }
-    
+
 }

@@ -18,7 +18,6 @@ public class ProductService : IProductService
 
         produto.Nome = data.Name;
         produto.Preco = data.Price;
-        produto.Foto = data.Photo;
         produto.Descricao = data.Description;
         produto.Categoria = data.Category;
 

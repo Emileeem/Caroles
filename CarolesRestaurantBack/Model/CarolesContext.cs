@@ -19,6 +19,8 @@ public partial class CarolesContext : DbContext
 
     public virtual DbSet<Codigo> Codigos { get; set; }
 
+    public virtual DbSet<Imagem> Imagems { get; set; }
+
     public virtual DbSet<PedidoCliente> PedidoClientes { get; set; }
 
     public virtual DbSet<Produto> Produtos { get; set; }
@@ -31,7 +33,7 @@ public partial class CarolesContext : DbContext
     {
         modelBuilder.Entity<Cliente>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Cliente__3214EC27405F70F7");
+            entity.HasKey(e => e.Id).HasName("PK__Cliente__3214EC27F4E5D3CF");
 
             entity.ToTable("Cliente");
 
@@ -60,7 +62,7 @@ public partial class CarolesContext : DbContext
 
         modelBuilder.Entity<Codigo>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Codigos__3214EC27C54DE5E3");
+            entity.HasKey(e => e.Id).HasName("PK__Codigos__3214EC27D304D120");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.CodigoAleat)
@@ -68,9 +70,18 @@ public partial class CarolesContext : DbContext
                 .IsUnicode(false);
         });
 
+        modelBuilder.Entity<Imagem>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Imagem__3214EC279148C072");
+
+            entity.ToTable("Imagem");
+
+            entity.Property(e => e.Id).HasColumnName("ID");
+        });
+
         modelBuilder.Entity<PedidoCliente>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__PedidoCl__3214EC27E9C377CF");
+            entity.HasKey(e => e.Id).HasName("PK__PedidoCl__3214EC27F53204E8");
 
             entity.ToTable("PedidoCliente");
 
@@ -81,12 +92,12 @@ public partial class CarolesContext : DbContext
             entity.HasOne(d => d.Produtos).WithMany(p => p.PedidoClientes)
                 .HasForeignKey(d => d.ProdutosId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__PedidoCli__Produ__3E52440B");
+                .HasConstraintName("FK__PedidoCli__Produ__412EB0B6");
         });
 
         modelBuilder.Entity<Produto>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Produtos__3214EC271C19951E");
+            entity.HasKey(e => e.Id).HasName("PK__Produtos__3214EC276D5613B2");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.Categoria)
@@ -102,7 +113,11 @@ public partial class CarolesContext : DbContext
 
             entity.HasOne(d => d.Codigos).WithMany(p => p.Produtos)
                 .HasForeignKey(d => d.CodigosId)
-                .HasConstraintName("FK__Produtos__Codigo__3B75D760");
+                .HasConstraintName("FK__Produtos__Codigo__3E52440B");
+
+            entity.HasOne(d => d.Imagem).WithMany(p => p.Produtos)
+                .HasForeignKey(d => d.ImagemId)
+                .HasConstraintName("FK__Produtos__Imagem__3D5E1FD2");
         });
 
         OnModelCreatingPartial(modelBuilder);

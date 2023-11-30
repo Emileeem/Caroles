@@ -14,8 +14,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddScoped<CarolesContext>();
-builder.Services.AddSingleton<CryptoService>();
 builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddSingleton<CryptoService>(p => new(){
+    InternalKeySize = 24,
+    UpdatePeriod = TimeSpan.FromDays(1)
+});
+
 builder.Services.AddSingleton<ISecurityService, SecurityService>();
 
 builder.Services.AddCors(options =>

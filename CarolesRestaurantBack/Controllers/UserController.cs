@@ -45,6 +45,7 @@ public class UserController : ControllerBase
         
         var jwt = crypto.GetToken(new {
             id = loggedUser.Id,
+            isAdm = loggedUser.IsAdmin
         });
         
         // var value = crypto.Validate<JwtPayload>(jwt);

@@ -11,15 +11,17 @@ public partial class Produto
 
     public decimal Preco { get; set; }
 
-    public byte[]? Foto { get; set; }
-
     public string Descricao { get; set; } = null!;
 
     public string Categoria { get; set; } = null!;
 
+    public int? ImagemId { get; set; }
+
     public int? CodigosId { get; set; }
 
     public virtual Codigo? Codigos { get; set; }
+
+    public virtual Imagem? Imagem { get; set; }
 
     public virtual ICollection<PedidoCliente> PedidoClientes { get; set; } = new List<PedidoCliente>();
 }
