@@ -22,15 +22,24 @@
 .cardss {
   margin-bottom: 5%;
 }
-.card-img-top {
-  height: 200px;
-}
 a img {
   margin-top: 5%;
-}
+  height: 200px !important;
 
+}
+.text{
+  color: #D9F6D8;
+  font-size: 20px;
+  font-family: 'Courier New', Courier, monospace;
+}
+.text2{
+  color: #fcf1b1;
+  font-size: 20px;
+  font-family: 'Courier New', Courier, monospace;
+}
 a {
   text-decoration: none;
+  text-align: center;
 }
 @media (width < 425px){
   .logo {

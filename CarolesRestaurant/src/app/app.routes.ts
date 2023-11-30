@@ -6,12 +6,19 @@ import { IndexAdminComponent } from './index-admin/index-admin.component';
 import { MenuComponent } from './menu/menu.component';
 import { IngredientsComponent } from './ingredients/ingredients.component';
 import { CodeComponent } from './code/code.component';
+import { ProdutoComponent } from './produto/produto.component';
 
 export const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'cadastro', component: CadastroComponent},
   {path: 'index', component: IndexUserComponent},
-  {path: 'indexAdmin', component: IndexAdminComponent},
+  {
+    path: 'indexAdmin',
+    component: IndexAdminComponent,
+    children: [
+      {path: 'produto', component: ProdutoComponent}
+    ]
+  },
   {path: 'menu', component: MenuComponent},
   {
     path: 'ingredients',
