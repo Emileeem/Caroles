@@ -18,16 +18,10 @@ create table Cliente(
 	DataNasc date not null,
 	Email varchar (50) not null,
 	Salt varchar (200) not null,
+	isAdmin varchar(3) null
 );
 go
 
-create table Funcionario(
-	ID int identity primary key,
-	Senha varchar(90) not null,
-	Email varchar (50) not null,
-	Salt varchar (200) not null,
-);
-go
 create table Codigos(
 	ID int identity primary key,
 	CodigoAleat varchar(9) not null
@@ -39,7 +33,8 @@ create table Produtos(
 	Preco decimal (5, 2) not null,
 	Foto varbinary(MAX) null,
 	Descricao varchar(500) not null,
-	CodigosId int references Codigos(ID) not null
+	Categoria varchar(15) not null,
+	CodigosId int references Codigos(ID) null
 );
 go
 

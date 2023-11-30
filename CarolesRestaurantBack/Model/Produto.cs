@@ -17,9 +17,9 @@ public partial class Produto
 
     public string Categoria { get; set; } = null!;
 
-    public int CodigosId { get; set; }
+    public int? CodigosId { get; set; }
 
-    public virtual Codigo Codigos { get; set; } = null!;
+    public virtual Codigo? Codigos { get; set; }
 
     public virtual ICollection<PedidoCliente> PedidoClientes { get; set; } = new List<PedidoCliente>();
 }
