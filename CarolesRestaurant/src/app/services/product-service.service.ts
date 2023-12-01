@@ -8,9 +8,9 @@ import { ProductData } from '../data/product-data'
 export class ProductServiceService {
   constructor(private http: ApiProductService) { }
 
-  register(data: ProductData)
+  register(data: ProductData, callback: any = null)
   {
     this.http.post('/product/new', data)
-      .subscribe(response => console.log(response))
+      .subscribe(response => callback(response))
   }
 }

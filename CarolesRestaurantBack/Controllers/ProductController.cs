@@ -17,6 +17,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Model;
 using Services;
+using Trevisharp.Security.Jwt;
 
 [ApiController]
 [Route("product")]
@@ -30,7 +31,6 @@ public class ProductController : ControllerBase
         [FromServices]IProductService service
     )
     {
-        Console.WriteLine("aquiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
         var errors = new List<string>();
 
 
@@ -56,6 +56,7 @@ public class ProductController : ControllerBase
         [FromServices]CarolesContext ctx
     )
     {
+
         var query =
             from image in ctx.Imagems
             where image.Id == photoId
@@ -73,17 +74,17 @@ public class ProductController : ControllerBase
     [HttpPost("imagem")]
     [EnableCors("DefaultPolicy")]
     public async Task<IActionResult> AddImage(
-        [FromServices]ISecurityService security
+        [FromServices]CryptoService security
     )
     {
         var jwtData = Request.Form["jwt"];
         var jwtObj = JsonSerializer
             .Deserialize<JwtToken>(jwtData);
-        Console.WriteLine(jwtObj);
+
         var jwt = jwtObj.jwt;
 
-        var userOjb = await security
-            .ValidateJwt<JwtPayload>(jwt);
+        var userOjb = security
+            .Validate<JwtPayload>(jwt);
 
         if (userOjb is null)
             return Unauthorized();
