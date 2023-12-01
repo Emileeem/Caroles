@@ -33,7 +33,7 @@ a img:hover {
 
 .carrinho {
   position: relative;
-  top: 9.9%;
+  top: 6.2%;
   background-color: salmon;
   display: flex;
   justify-content: space-around;
@@ -41,4 +41,8 @@ a img:hover {
 }
 .carrinho img {
   width: 5vh;
+}
+
+.btn {
+  font-size: 35px;
 }

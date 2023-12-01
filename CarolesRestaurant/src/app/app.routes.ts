@@ -28,5 +28,11 @@ export const routes: Routes = [
     ]
   },
   {path: 'pedidos', component: PedidosComponent},
-  {path: 'totem', component: TotemComponent},
+  {
+    path: 'totem',
+    component: TotemComponent,
+    children: [
+      {path: 'totemCode', component: TotemComponent}
+    ]
+  },
 ];
