@@ -1,0 +1,44 @@
+.nav-bar {
+  /* background: rgb(54,38,51);
+  background: linear-gradient(90deg, rgba(54,38,51,1) 0%, rgba(107,77,102,1) 37%, rgba(187,111,175,1) 100%); */
+  background-color:green;
+  display: flex;
+  justify-content: center;
+}
+.nav-bar img {
+  width: 20vh;
+}
+
+.container {
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  color: #07391E;
+}
+
+.card {
+  width: 40%;
+  margin: 5%;
+}
+
+a {
+  text-decoration: none;
+  color: #07391E;
+}
+
+a img:hover {
+  transform: scale(0.97);
+  opacity: 1;
+}
+
+.carrinho {
+  position: relative;
+  top: 9.9%;
+  background-color: salmon;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.carrinho img {
+  width: 5vh;
+}

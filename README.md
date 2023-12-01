@@ -13,7 +13,7 @@ Obs: 'Tem tela/Tem Interface' = Possui parte visual, mesmo sem funcionar.
 - [X] Possui tela de Pedidos.
 - [X] Possui tela de Cadastro de Produtos.
 - [ ] Possui tela de Cadastro de Promoções.
-- [ ] Possui tela do totem.
+- [X] Possui tela do totem.
 - [ ] Possui tela dos gráficos.
 - [ ] Tela do totem tem interface para inserção de código da promoção.
 - [ ] Tela do totem tem interface para colocar itens na sacola.
