@@ -67,6 +67,8 @@ public class ProductController : ControllerBase
 
         return File(photo.Foto, "image/jpeg");
     }
+    
+
     [DisableRequestSizeLimit]
     [HttpPost("imagem")]
     [EnableCors("DefaultPolicy")]
@@ -77,6 +79,7 @@ public class ProductController : ControllerBase
         var jwtData = Request.Form["jwt"];
         var jwtObj = JsonSerializer
             .Deserialize<JwtToken>(jwtData);
+        Console.WriteLine(jwtObj);
         var jwt = jwtObj.jwt;
 
         var userOjb = await security
@@ -105,6 +108,8 @@ public class ProductController : ControllerBase
         ctx.Add(img);
         await ctx.SaveChangesAsync();
 
-        return Ok();
+        return Ok(new {
+            imgID = img.Id
+        });
     }
 }
