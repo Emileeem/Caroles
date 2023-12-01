@@ -19,5 +19,5 @@ public partial class Cliente
 
     public string Salt { get; set; } = null!;
 
-    public string? IsAdmin { get; set; }
+    public bool IsAdmin { get; set; }
 }

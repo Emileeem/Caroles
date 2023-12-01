@@ -33,7 +33,7 @@ public partial class CarolesContext : DbContext
     {
         modelBuilder.Entity<Cliente>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Cliente__3214EC278018E238");
+            entity.HasKey(e => e.Id).HasName("PK__Cliente__3214EC274BD6995D");
 
             entity.ToTable("Cliente");
 
@@ -42,10 +42,7 @@ public partial class CarolesContext : DbContext
             entity.Property(e => e.Email)
                 .HasMaxLength(50)
                 .IsUnicode(false);
-            entity.Property(e => e.IsAdmin)
-                .HasMaxLength(3)
-                .IsUnicode(false)
-                .HasColumnName("isAdmin");
+            entity.Property(e => e.IsAdmin).HasColumnName("isAdmin");
             entity.Property(e => e.Nome)
                 .HasMaxLength(20)
                 .IsUnicode(false);
@@ -62,7 +59,7 @@ public partial class CarolesContext : DbContext
 
         modelBuilder.Entity<Codigo>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Codigos__3214EC27005F11DA");
+            entity.HasKey(e => e.Id).HasName("PK__Codigos__3214EC2710D478FC");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.CodigoAleat)
@@ -72,7 +69,7 @@ public partial class CarolesContext : DbContext
 
         modelBuilder.Entity<Imagem>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Imagem__3214EC27890DEF47");
+            entity.HasKey(e => e.Id).HasName("PK__Imagem__3214EC2725FADAAB");
 
             entity.ToTable("Imagem");
 
@@ -81,7 +78,7 @@ public partial class CarolesContext : DbContext
 
         modelBuilder.Entity<PedidoCliente>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__PedidoCl__3214EC27471A1A88");
+            entity.HasKey(e => e.Id).HasName("PK__PedidoCl__3214EC27F523FBE2");
 
             entity.ToTable("PedidoCliente");
 
@@ -97,7 +94,7 @@ public partial class CarolesContext : DbContext
 
         modelBuilder.Entity<Produto>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Produtos__3214EC27F4AE1DE0");
+            entity.HasKey(e => e.Id).HasName("PK__Produtos__3214EC27C512704C");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.Categoria)
@@ -110,9 +107,6 @@ public partial class CarolesContext : DbContext
                 .HasMaxLength(20)
                 .IsUnicode(false);
             entity.Property(e => e.Preco).HasColumnType("decimal(5, 2)");
-            entity.Property(e => e.Promocao)
-                .HasMaxLength(3)
-                .IsUnicode(false);
 
             entity.HasOne(d => d.Codigos).WithMany(p => p.Produtos)
                 .HasForeignKey(d => d.CodigosId)

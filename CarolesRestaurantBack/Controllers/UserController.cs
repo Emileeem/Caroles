@@ -70,9 +70,6 @@ public class UserController : ControllerBase
 
         if (user is null || user.Login is null || user.Name is null || user.Surname is null)
             errors.Add("É necessário informar todos os campos pedidos.");
-
-        if (user.IsAdmin is null)
-            user.IsAdmin = "Não";
             
         if (errors.Count > 0)
             return BadRequest(errors);
