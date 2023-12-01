@@ -47,6 +47,21 @@ public class ProductController : ControllerBase
         await service.Create(produto);
         return Ok();
     }
+
+    [HttpGet("product")]
+    [EnableCors("DefaultPolicy")]
+    public async Task<IActionResult> VerProduto(
+        [FromServices]IProductService service
+    )
+    {
+        var a = await service.Get();
+        var errors = new List<string>();
+        if (errors.Count > 0)
+            return BadRequest(errors);
+
+        return Ok(new {a});
+    }
+
     [HttpGet("image")]
     [EnableCors("DefaultPolicy")]
     
