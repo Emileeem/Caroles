@@ -8,6 +8,7 @@ import { IngredientsComponent } from './ingredients/ingredients.component';
 import { CodeComponent } from './code/code.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
+import { TotemComponent } from './totem/totem.component';
 
 export const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -29,4 +30,5 @@ export const routes: Routes = [
     ]
   },
   {path: 'pedidos', component: PedidosComponent},
+  {path: 'totem', component: TotemComponent},
 ];
