@@ -1,9 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
+
 namespace CarolesRestaurantBack.Services;
 
 using DTO;
 using Model;
 
-using Microsoft.EntityFrameworkCore;
 
 public class ProductService : IProductService
 {

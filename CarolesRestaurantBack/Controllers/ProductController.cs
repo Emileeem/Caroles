@@ -31,6 +31,7 @@ public class ProductController : ControllerBase
         [FromForm] Produto p
     )
     {
+        Console.WriteLine("aquiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
         var errors = new List<string>();
 
         if (produto.Name == p.Nome)
