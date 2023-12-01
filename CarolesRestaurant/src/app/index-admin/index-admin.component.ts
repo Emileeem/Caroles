@@ -16,4 +16,5 @@ export class IndexAdminComponent {
     openDialog() {
       this.dialog.open(ProdutoComponent);
     }
+
 }

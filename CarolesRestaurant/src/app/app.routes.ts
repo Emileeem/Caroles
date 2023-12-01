@@ -17,7 +17,7 @@ export const routes: Routes = [
     component: IndexAdminComponent,
     children: [
       {path: 'produto', component: ProdutoComponent}
-    ]
+    ],
   },
   {path: 'menu', component: MenuComponent},
   {

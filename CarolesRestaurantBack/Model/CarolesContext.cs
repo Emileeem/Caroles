@@ -33,7 +33,7 @@ public partial class CarolesContext : DbContext
     {
         modelBuilder.Entity<Cliente>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Cliente__3214EC274BD6995D");
+            entity.HasKey(e => e.Id).HasName("PK__Cliente__3214EC27B83CFADD");
 
             entity.ToTable("Cliente");
 
@@ -59,7 +59,7 @@ public partial class CarolesContext : DbContext
 
         modelBuilder.Entity<Codigo>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Codigos__3214EC2710D478FC");
+            entity.HasKey(e => e.Id).HasName("PK__Codigos__3214EC27BC59EECA");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.CodigoAleat)
@@ -69,7 +69,7 @@ public partial class CarolesContext : DbContext
 
         modelBuilder.Entity<Imagem>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Imagem__3214EC2725FADAAB");
+            entity.HasKey(e => e.Id).HasName("PK__Imagem__3214EC271670A9E6");
 
             entity.ToTable("Imagem");
 
@@ -78,11 +78,14 @@ public partial class CarolesContext : DbContext
 
         modelBuilder.Entity<PedidoCliente>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__PedidoCl__3214EC27F523FBE2");
+            entity.HasKey(e => e.Id).HasName("PK__PedidoCl__3214EC27032FA50C");
 
             entity.ToTable("PedidoCliente");
 
             entity.Property(e => e.Id).HasColumnName("ID");
+            entity.Property(e => e.Apelido)
+                .HasMaxLength(20)
+                .IsUnicode(false);
             entity.Property(e => e.HoraPedido).HasColumnType("datetime");
             entity.Property(e => e.HoraPronto).HasColumnType("datetime");
 
@@ -94,7 +97,7 @@ public partial class CarolesContext : DbContext
 
         modelBuilder.Entity<Produto>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Produtos__3214EC27C512704C");
+            entity.HasKey(e => e.Id).HasName("PK__Produtos__3214EC2728F30E4A");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.Categoria)
