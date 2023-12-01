@@ -27,15 +27,13 @@ public class ProductController : ControllerBase
 
     public async Task<IActionResult> CadastrarProduto(
         [FromBody]ProdutoData produto,
-        [FromServices]IProductService service,
-        [FromForm] Produto p
+        [FromServices]IProductService service
     )
     {
         Console.WriteLine("aquiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
         var errors = new List<string>();
 
-        if (produto.Name == p.Nome)
-            errors.Add("Não pode ser criado produtos com os mesmos nomes.");
+
         if (produto.Name.Length < 5)
             errors.Add("O produto precisa conter ao menos 5 caracteres.");
         if(produto.Price < 10)

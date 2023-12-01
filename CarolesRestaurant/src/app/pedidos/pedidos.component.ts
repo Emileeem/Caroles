@@ -10,4 +10,7 @@ import { CommonModule } from '@angular/common';
 })
 export class PedidosComponent {
 
+  RandomBg(bg:any) {
+    
+  }
 }

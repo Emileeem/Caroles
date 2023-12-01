@@ -1,0 +1,13 @@
+.nav {
+  background-color: #B2BB5C;
+}
+.nav img {
+  width: 18vh;
+}
+
+.card {
+  width: 30%;
+}
+.card-header {
+  background-color: purple;
+}
