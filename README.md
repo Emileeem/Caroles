@@ -15,7 +15,7 @@ Obs: 'Tem tela/Tem Interface' = Possui parte visual, mesmo sem funcionar.
 - [ ] Possui tela de Cadastro de Promoções.
 - [X] Possui tela do totem.
 - [ ] Possui tela dos gráficos.
-- [ ] Tela do totem tem interface para inserção de código da promoção.
+- [X] Tela do totem tem interface para inserção de código da promoção.
 - [ ] Tela do totem tem interface para colocar itens na sacola.
 - [X] Banco de dados criado com tabelas de Usuário, Pedido, ItemPedido, Produto, Promoção ou similar.
 - [X] Rotas no Frontend Configuradas.
