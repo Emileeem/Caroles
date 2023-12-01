@@ -68,7 +68,7 @@ public class ProductController : ControllerBase
         return File(photo.Foto, "image/jpeg");
     }
     [DisableRequestSizeLimit]
-    [HttpPut("imagem")]
+    [HttpPost("imagem")]
     [EnableCors("DefaultPolicy")]
     public async Task<IActionResult> AddImage(
         [FromServices]ISecurityService security

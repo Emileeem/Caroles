@@ -46,7 +46,7 @@ export class ProdutoComponent {
       return
     formData.append('jwt', jwt)
 
-    this.http.put('http://localhost:5083/product/imagem', formData)
+    this.http.post('http://localhost:5083/product/imagem', formData)
       .subscribe(result => console.log("ok!"))
   }
 }
