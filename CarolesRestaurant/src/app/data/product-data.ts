@@ -1,7 +1,8 @@
 export interface ProductData {
-  name: string,
+  nome: string,
   price: any,
   category: string,
   description: string,
-  imgID: any
+  imagemId: any
 }
+ 

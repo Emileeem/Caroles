@@ -28,7 +28,7 @@ public class ProductService : IProductService
         await this.ctx.SaveChangesAsync();
     }
 
-    public async Task<List<Produto>> Get(string name)
+    public async Task<List<Produto>> Get()
         => await this.ctx.Produtos.ToListAsync();
 
     public async Task<List<Produto>> GetByCategoria(string categoria)

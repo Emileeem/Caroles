@@ -13,4 +13,10 @@ export class ProductServiceService {
     this.http.post('/product/new', data)
       .subscribe(response => callback(response))
   }
+
+  take()
+  {
+    return this.http.get('/product/product')
+  }
 }
+

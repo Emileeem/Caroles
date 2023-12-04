@@ -32,11 +32,11 @@ export class ProdutoComponent {
       .subscribe((result: any)  =>
       {
         this.product.register({
-          name: this.name,
+          nome: this.name,
           price: this.price,
           category: this.category,
           description: this.description,
-          imgID: result.imgID
+          imagemId: result.imgID
         }, (response:any) => {
           this.dialogRef.close()
         })

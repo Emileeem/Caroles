@@ -18,7 +18,7 @@ create table Cliente(
 	DataNasc date not null,
 	Email varchar (50) not null,
 	Salt varchar (200) not null,
-	isAdmin varchar(3) null
+	isAdmin bit not null
 );
 go
 
@@ -38,7 +38,7 @@ create table Produtos(
 	Preco decimal (5, 2) not null,
 	Descricao varchar(500) not null,
 	Categoria varchar(15) not null,
-	Promocao varchar(3) null,
+	Promocao bit not null,
 	ImagemId int references Imagem(ID) null,
 	CodigosId int references Codigos(ID) null
 );
@@ -46,9 +46,16 @@ go
 
 create table PedidoCliente(
 	ID int identity primary key,
+	Apelido varchar(20),
 	ProdutosId int references Produtos(ID) not null,
 	HoraPedido datetime null,
 	HoraPronto datetime null
 ); 
 go
 
+select * from Imagem
+select * from Produtos
+
+update Cliente 
+	set isAdmin = 1
+	where Nome = 'Admin'

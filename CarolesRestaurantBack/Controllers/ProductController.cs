@@ -62,7 +62,7 @@ public class ProductController : ControllerBase
         return Ok(new {a});
     }
 
-    [HttpGet("image")]
+    [HttpGet("image/{photoId}")]
     [EnableCors("DefaultPolicy")]
     
     public async Task<IActionResult> GetImage(
