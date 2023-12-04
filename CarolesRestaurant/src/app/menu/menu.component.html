@@ -9,8 +9,8 @@
 </div>
 <div class="row m-5 aqui">
 
-    @for (item of produtos; track item.nome) {
-      <a href = "/ingredients " class="card cardss shadow" style="width: 18rem;">
+    @for (item of produtos; track item.id) {
+      <a class="card cardss shadow" style="width: 18rem;" (click)="ingredientsDetails(item.id)" >
         <img src="{{'http://localhost:5083/product/image/' + item.imagemId}}" class="card-img" alt="...">
         <div class="card-body">
           <b class="text">{{item.nome}}</b>

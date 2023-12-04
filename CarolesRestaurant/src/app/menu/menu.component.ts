@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductServiceService } from '../services/product-service.service';
 import { Router } from '@angular/router';
-import { ProductData } from '../data/product-data';
 import { ImageServiceService } from '../services/image-service.service';
+import { ProductDataMenu } from '../data/product-dataMenu';
 
 @Component({
   selector: 'app-menu',
@@ -20,8 +20,15 @@ export class MenuComponent implements OnInit {
     private image: ImageServiceService
   ) {}
 
-  produtos: ProductData[] = [];
+  produtos: ProductDataMenu[] = [];
 
+  ingredientsDetails(id: number): void {
+    this.router.navigate(['/ingredients', id]);
+  }
+  onClickByCategory()
+  {
+    
+  }
   ngOnInit() {
     this.service.take().subscribe(
       (produto : any) => {

@@ -21,7 +21,7 @@ export const routes: Routes = [
   },
   {path: 'menu', component: MenuComponent},
   {
-    path: 'ingredients',
+    path: 'ingredients/:id',
     component: IngredientsComponent,
     children: [
       {path: 'code', component: CodeComponent}

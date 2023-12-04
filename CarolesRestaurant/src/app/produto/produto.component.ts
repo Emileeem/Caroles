@@ -35,7 +35,7 @@ export class ProdutoComponent {
           nome: this.name,
           price: this.price,
           category: this.category,
-          description: this.description,
+          descricao: this.description,
           imagemId: result.imgID
         }, (response:any) => {
           this.dialogRef.close()
