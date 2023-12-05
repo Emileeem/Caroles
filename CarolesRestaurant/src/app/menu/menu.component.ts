@@ -20,25 +20,49 @@ export class MenuComponent implements OnInit {
     private image: ImageServiceService
   ) {}
 
+  filteredProducts: ProductDataMenu[] = [];
   produtos: ProductDataMenu[] = [];
+  selectedCategory: string = '';
+  selected = ''
 
   ingredientsDetails(id: number): void {
     this.router.navigate(['/ingredients', id]);
   }
-  onClickByCategory()
+
+  getByCategory(categoria: string): void
   {
-    
-  }
-  ngOnInit() {
-    this.service.take().subscribe(
-      (produto : any) => {
-        this.produtos = []
-        produto.a.forEach((x:any) => this.produtos.push(x))
-        console.log(this.produtos)
-      },
-      (error) => {
-        console.error('Não foi possível obter produtos', error)
-      });
+    if (this.selected == categoria)
+    {
+      this.selected = '';
+      this.loadAll()
+      return;
     }
 
+    this.selectedCategory = categoria;
+    console.log(this.selectedCategory)
+    this.service.getCategory(categoria).subscribe
+    (
+      (data: any) => {
+        this.selected = categoria
+        this.produtos = []
+        data.data.forEach((x:any) => this.produtos.push(x))
+      }
+    )
+}
+
+  ngOnInit() {
+    this.loadAll()
+    }
+
+    loadAll()
+    {
+      this.service.take().subscribe(
+        (produto : any) => {
+          this.produtos = []
+          produto.a.forEach((x:any) => this.produtos.push(x))
+        },
+        (error) => {
+          console.error('Não foi possível obter produtos', error)
+        });
+    }
 }

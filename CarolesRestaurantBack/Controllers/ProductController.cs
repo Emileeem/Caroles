@@ -70,14 +70,22 @@ public class ProductController : ControllerBase
     )
     {
         var a = await service.GetById(produto.Id);
-        var errors = new List<string>();
-        if (errors.Count > 0)
-            return BadRequest(errors);
 
         return Ok(new {a});
     }
 
-
+    [HttpGet("categoria/{categoria}")]
+    [EnableCors("DefaultPolicy")]
+    public async Task<IActionResult> VerProdutoCategoria(
+        string categoria,
+        [FromServices]IProductService service
+    )
+    {
+        var result = await service.GetByCategoria(categoria);
+        return Ok(new {
+            data = result
+        });
+    }
 
     [HttpGet("image/{photoId}")]
     [EnableCors("DefaultPolicy")]

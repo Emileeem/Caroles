@@ -1,5 +1,6 @@
 export interface ProductDataMenu {
   id: number,
   nome: string,
-  imagemId: any
+  imagemId: any,
+  categoria: string
 }

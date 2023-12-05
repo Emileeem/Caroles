@@ -22,5 +22,9 @@ export class ProductServiceService {
   {
     return this.http.get('/product/products')
   }
+  getCategory(categoria: string)
+  {
+    return this.http.get('/product/categoria/' + categoria)
+  }
 }
 
