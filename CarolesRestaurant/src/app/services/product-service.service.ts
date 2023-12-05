@@ -18,5 +18,9 @@ export class ProductServiceService {
   {
     return this.http.get('/product/product')
   }
+  getSolo()
+  {
+    return this.http.get('/product/products')
+  }
 }
 

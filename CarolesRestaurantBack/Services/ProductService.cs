@@ -18,10 +18,10 @@ public class ProductService : IProductService
     {
         Produto produto = new Produto();
 
-        produto.Nome = data.Name;
-        produto.Preco = data.Price;
-        produto.Descricao = data.Description;
-        produto.Categoria = data.Category;
+        produto.Nome = data.Nome;
+        produto.Preco = data.Preco;
+        produto.Descricao = data.Descricao;
+        produto.Categoria = data.Categoria;
         produto.ImagemId = data.imgID;
 
         this.ctx.Add(produto);
@@ -39,5 +39,15 @@ public class ProductService : IProductService
             select p;
 
         return await query.ToListAsync();
+    }
+
+    public async Task<Produto> GetById(int id)
+    {
+        var query =
+            from p in this.ctx.Produtos
+            where p.Id == id
+            select p;
+
+        return await query.FirstOrDefaultAsync();
     }
 }

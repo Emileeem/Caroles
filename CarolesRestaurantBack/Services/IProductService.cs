@@ -10,5 +10,6 @@ public interface IProductService
     Task Create(ProdutoData data);
     Task<List<Produto>> GetByCategoria(string categoria);
     Task<List<Produto>> Get();
+    Task<Produto> GetById(int id);
 
 }

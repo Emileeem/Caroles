@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   MatDialog,
@@ -7,9 +7,9 @@ import {
   MatDialogContent,
 } from '@angular/material/dialog';
 import { CodeComponent} from '../code/code.component';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductServiceService } from '../services/product-service.service';
-import { ProductData } from '../data/product-data';
+import { ProductDataIngredients } from '../data/product-dataIngredients';
 
 @Component({
   selector: 'app-ingredients',
@@ -18,23 +18,32 @@ import { ProductData } from '../data/product-data';
   templateUrl: './ingredients.component.html',
   styleUrl: './ingredients.component.css'
 })
-export class IngredientsComponent implements OnInit{
-    constructor(public dialog: MatDialog,
-      private service: ProductServiceService,
-      private route: Router ){}
+export class IngredientsComponent implements OnInit, OnDestroy {
 
-  produtos: ProductData[] = [];
+  subscription: any;
+  constructor(public dialog: MatDialog,
+      private service: ProductServiceService,
+      private route: ActivatedRoute){}
+  ngOnDestroy(): void {
+    throw new Error('Method not implemented.');
+  }
+
+  produtos: ProductDataIngredients[] = [];
 
   ngOnInit(): void {
-    const productId = window.location.href.split("/")[2];
-    this.service.take().subscribe(
-      (produto : any) => {
-        this.produtos = []
-        produto.a.forEach((x:any) => this.produtos.push(x))
-        console.log(this.produtos)
-      },
-  )}
 
+  this.subscription = this.route.params
+    .subscribe(params => {
+      var productId = params['id']
+      this.service.getSolo().subscribe(
+        (produto : any) => {
+          this.produtos = []
+          produto.a.forEach((x:any) => this.produtos.push(x))
+          console.log(this.produtos)
+        },
+      )
+    })
+  }
 
     openDialog() {
       this.dialog.open(CodeComponent);

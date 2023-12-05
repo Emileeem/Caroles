@@ -27,7 +27,7 @@ export class LoginComponent {
     this.client.login({
       login: this.email,
       password: this.password,
-      isAdm: false
+      isAdmin: false
     }, (result: any) => {
 
       if(result === null)
@@ -38,9 +38,9 @@ export class LoginComponent {
       {
         sessionStorage.setItem('jwt', JSON.stringify(result))
 
-        console.log(":result:", result);
+        console.log(":result:", result.isAdmin);
 
-        if(result.isAdm == false)
+        if(result.isAdmin === false)
           this.router.navigate(['menu'])
         else
           this.router.navigate(['indexAdmin'])

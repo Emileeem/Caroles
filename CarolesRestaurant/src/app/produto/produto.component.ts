@@ -33,10 +33,10 @@ export class ProdutoComponent {
       {
         this.product.register({
           nome: this.name,
-          price: this.price,
-          category: this.category,
+          preco: this.price,
+          categoria: this.category,
           descricao: this.description,
-          imagemId: result.imgID
+          imgID: result.imgID
         }, (response:any) => {
           this.dialogRef.close()
         })

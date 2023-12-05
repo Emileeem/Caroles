@@ -34,11 +34,11 @@ public class ProductController : ControllerBase
         var errors = new List<string>();
 
 
-        if (produto.Name.Length < 5)
+        if (produto.Nome.Length < 5)
             errors.Add("O produto precisa conter ao menos 5 caracteres.");
-        if(produto.Price < 10)
+        if(produto.Preco < 10)
             errors.Add("Os produtos da nossa loja tem o preço maior que esse!");
-        if(produto.Category == null)
+        if(produto.Categoria == null)
             errors.Add("Você precisa dar uma categoria ao produto.");
 
         if(errors.Count > 0)
@@ -61,6 +61,23 @@ public class ProductController : ControllerBase
 
         return Ok(new {a});
     }
+
+    [HttpGet("products")]
+    [EnableCors("DefaultPolicy")]
+    public async Task<IActionResult> VerProdutoUnico(
+        [FromBody]ProdutoData produto,
+        [FromServices]IProductService service
+    )
+    {
+        var a = await service.GetById(produto.Id);
+        var errors = new List<string>();
+        if (errors.Count > 0)
+            return BadRequest(errors);
+
+        return Ok(new {a});
+    }
+
+
 
     [HttpGet("image/{photoId}")]
     [EnableCors("DefaultPolicy")]
