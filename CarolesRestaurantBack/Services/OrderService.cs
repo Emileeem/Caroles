@@ -21,9 +21,9 @@ public class OrderService : IOrderService
     {
         PedidoCliente pedido = new PedidoCliente();
 
-        pedido.Apelido = data.Nickname;
-        pedido.HoraPedido = data.OrderTime;
-        pedido.HoraPronto = data.ReadyTime;
+        pedido.Apelido = data.Apelido;
+        pedido.HoraPedido = data.HoraPedido;
+        pedido.HoraPronto = data.HoraPronto;
         pedido.ProdutosId = data.ProdutosId;
 
         this.ctx.Add(pedido);

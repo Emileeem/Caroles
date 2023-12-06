@@ -36,7 +36,7 @@ public class OrderController : ControllerBase
         if(pedido is null)
             errors.Add("O pedido não pode ser nulo!");
 
-        if(pedido.Nickname.Length <= 3)
+        if(pedido.Apelido.Length <= 3)
             errors.Add("Seu apelido precisa ter pelo menos 3 caracteres.");
 
         if(errors.Count > 0)

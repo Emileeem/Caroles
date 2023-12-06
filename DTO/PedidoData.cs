@@ -5,8 +5,8 @@ namespace DTO;
 
 public class PedidoData
 {
-    public String Nickname { get; set; }
-    public DateTime OrderTime { get; set; }
-    public DateTime ReadyTime { get; set; }
+    public String Apelido { get; set; }
+    public DateTime HoraPedido { get; set; }
+    public DateTime HoraPronto { get; set; }
     public int ProdutosId { get; set; }
 }
