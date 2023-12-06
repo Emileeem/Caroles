@@ -8,6 +8,7 @@ import { CodeComponent } from './code/code.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { TotemComponent } from './totem/totem.component';
+import { ProdutosTotemComponent } from './produtos-totem/produtos-totem.component';
 
 export const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -35,4 +36,6 @@ export const routes: Routes = [
       {path: 'totemCode', component: TotemComponent}
     ]
   },
+  {path: 'produtosTotem', component: ProdutosTotemComponent},
+
 ];
