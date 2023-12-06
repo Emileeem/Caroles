@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { ProductServiceService } from '../services/product-service.service';
 import { ProductDataMenu } from '../data/product-dataMenu';
+import { MatDialog } from '@angular/material/dialog';
+import { CarrinhoComponent } from '../carrinho/carrinho.component';
 
 @Component({
   selector: 'app-produtos-totem',
@@ -15,6 +17,7 @@ export class ProdutosTotemComponent {
   constructor(
     private router: Router,
     private service: ProductServiceService,
+    public dialog: MatDialog
   ) {}
 
   produtos: ProductDataMenu[] = [];
@@ -42,6 +45,10 @@ export class ProdutosTotemComponent {
     )
 }
 
+  openDialog() {
+    this.dialog.open(CarrinhoComponent);
+  }
+  
   ngOnInit() {
     this.loadAll()
     }

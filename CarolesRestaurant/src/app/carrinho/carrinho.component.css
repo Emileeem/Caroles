@@ -1,12 +1,9 @@
-.nav-bar {
-  /* background: rgb(54,38,51);
-  background: linear-gradient(90deg, rgba(54,38,51,1) 0%, rgba(107,77,102,1) 37%, rgba(187,111,175,1) 100%); */
-  background-color:green;
-  display: flex;
-  justify-content: center;
+.container {
+  background-color: cadetblue;
 }
-.nav-bar img {
-  width: 20vh;
+.nome {
+ display: flex;
+ justify-content: center;
 }
 h1 {
   text-align: center;
@@ -24,6 +21,6 @@ h1 {
 }
 
 .confirm {
-  width: 30%;
+  width: 50%;
   font-size: 30px;
 }

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProdutosTotemComponent } from './produtos-totem.component';
+import { ProdutosTotemComponent } from './ProdutosTotemComponent';
 
 describe('ProdutosTotemComponent', () => {
   let component: ProdutosTotemComponent;
@@ -11,7 +11,7 @@ describe('ProdutosTotemComponent', () => {
       imports: [ProdutosTotemComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(ProdutosTotemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

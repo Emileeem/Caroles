@@ -37,7 +37,12 @@ export const routes: Routes = [
       {path: 'totemCode', component: TotemComponent}
     ]
   },
-  {path: 'produtosTotem', component: ProdutosTotemComponent},
-  {path: 'carrinho', component: CarrinhoComponent},
+  {
+    path: 'produtosTotem',
+     component: ProdutosTotemComponent,
+     children: [
+       {path: 'carrinho', component: CarrinhoComponent},
+     ]
+    },
 
 ];

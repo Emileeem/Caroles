@@ -16,7 +16,7 @@ Obs: 'Tem tela/Tem Interface' = Possui parte visual, mesmo sem funcionar.
 - [X] Possui tela do totem.
 - [ ] Possui tela dos gráficos.
 - [X] Tela do totem tem interface para inserção de código da promoção.
-- [ ] Tela do totem tem interface para colocar itens na sacola.
+- [X] Tela do totem tem interface para colocar itens na sacola.
 - [X] Banco de dados criado com tabelas de Usuário, Pedido, ItemPedido, Produto, Promoção ou similar.
 - [X] Rotas no Frontend Configuradas.
 - [X] Projeto Backend C# criado.
