@@ -9,6 +9,7 @@ import { ProdutoComponent } from './produto/produto.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { TotemComponent } from './totem/totem.component';
 import { ProdutosTotemComponent } from './produtos-totem/produtos-totem.component';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
 
 export const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -37,5 +38,6 @@ export const routes: Routes = [
     ]
   },
   {path: 'produtosTotem', component: ProdutosTotemComponent},
+  {path: 'carrinho', component: CarrinhoComponent},
 
 ];
