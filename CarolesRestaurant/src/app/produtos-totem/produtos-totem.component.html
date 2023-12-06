@@ -1,1 +1,33 @@
-<p>produtos-totem works!</p>
+<div class="nav-bar shadow">
+  <img src="../../assets/Logo.png" alt="">
+</div>
+<div class="nav shadow col-2">
+  <div class="container  menu-btn">
+    <a href="/totem" class="palavra mb-4 mt-5"> Menu </a>
+    <a class="btn btn-success shadow menu-btn2 mt-5" (click)="getByCategory('Bebidas')"> Bebidas </a>
+    <a class="btn btn-success shadow menu-btn2" (click)="getByCategory('Pratos')"> Pratos </a>
+    <a class="btn btn-success shadow menu-btn2" (click)="getByCategory('Doces')"> Doces </a>
+    <a href="" class="btn btn-success menu-btn2 shadow"> Promoções </a>
+    <a href="" class="carrin" class="btn btn-success menu-btn2 shadow">
+      <img src="../../assets/carrinho.png" alt="" class="mt-2" style="width: 70px;">
+    </a>
+  </div>
+</div>
+<div class="container">
+
+  <div class="row justify-content-end mt-4">
+    <div class="row col-10 g-0">
+      @for (item of produtos; track item.id) {
+        <a class="card cardss shadow col-5 m-4">
+          <img src="{{'http://localhost:5083/product/image/' + item.imagemId}}" class="card-img" alt="...">
+          <div class="card-body">
+            <b class="text">{{item.nome}}</b>
+            <b class="text2"> {{item.descricao}}</b>
+            <b class="text"> R${{item.preco}}</b>
+          </div>
+          <button class="btn btn-success"> Adicionar</button>
+        </a>
+      }
+    </div>
+  </div>
+</div>

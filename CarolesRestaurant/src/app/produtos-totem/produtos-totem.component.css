@@ -1,0 +1,78 @@
+.nav-bar {
+  /* background: rgb(54,38,51);
+  background: linear-gradient(90deg, rgba(54,38,51,1) 0%, rgba(107,77,102,1) 37%, rgba(187,111,175,1) 100%); */
+  background-color:green;
+  display: flex;
+  justify-content: center;
+}
+.nav-bar img {
+  width: 20vh;
+}
+.nav {
+  top: 0px;
+  height:2000px;
+  position: fixed;
+  background-color: #B2BB5C;
+}
+.menu-btn {
+  position: relative;
+  top: 0;
+  height: 40px;
+  border-radius: 15%;
+  font-family: monospace;
+  font-weight: bolder;
+  color:#FCF1B7;
+}
+.menu-btn2 {
+  margin: 5px;
+  margin-bottom: 44%;
+  width: 100%;
+}
+.palavra {
+  text-align: center;
+  color:black;
+  text-decoration: none;
+  font-size: 45px;
+  margin-left: 15px;
+}
+
+.aqui {
+  position: relative;
+  left: 5%;
+  display: flex;
+  justify-content: space-around;
+  /* width: 1150px; */
+  margin: 5%;
+}
+.cardss {
+  margin-bottom: 10%;
+  background-color: #044b25;
+}
+.cardss img {
+  margin-top: 5%;
+  height: 250px;
+}
+.cardss img:hover {
+  transform: scale(0.95);
+  opacity: 1;
+}
+.text {
+  position: relative;
+  display: flex;
+  place-content: center;
+  color:#FCF1B7;
+  font-family: monospace;
+  font-size: 20px;
+}
+a {
+  text-decoration: none;
+}
+.text2 {
+  position: relative;
+  display: flex;
+  text-align: center;
+  font-weight: 100;
+  color:#FCF1B7;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 15px;
+}

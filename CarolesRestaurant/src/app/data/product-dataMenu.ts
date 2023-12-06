@@ -2,5 +2,7 @@ export interface ProductDataMenu {
   id: number,
   nome: string,
   imagemId: any,
-  categoria: string
+  categoria: string,
+  preco: number,
+  descricao: string
 }
