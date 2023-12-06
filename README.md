@@ -38,7 +38,7 @@ Obs: 'Tem tela/Tem Interface' = Possui parte visual, mesmo sem funcionar.
 - [ ] Adm é capaz de ver Dashboard com dois gráficos de informações.
 - [ ] Gráficos do Dashboard realmente refletem os dados no banco.
 - [X] É possível ver produtos existentes no Totem.
-- [ ] É possível adicionar itens em uma sacola.
+- [X] É possível adicionar itens em uma sacola.
 - [ ] Ao finalizar a compra o pedido é realmente registrado no banco de dados.
 - [ ] É possível ver o custo total do pedido.
 - [ ] É possível adicionar uma promoção com um código promocional.
@@ -50,4 +50,4 @@ Obs: 'Tem tela/Tem Interface' = Possui parte visual, mesmo sem funcionar.
 - [ ] Usuário é capaz de gerar um código de promoção válido.
 - [ ] Sistema realmente válida código de promoção.
 
-19
+16

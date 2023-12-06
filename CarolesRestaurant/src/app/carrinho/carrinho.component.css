@@ -20,6 +20,14 @@ h1 {
   justify-content: center;
 }
 
+.botao2{
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  color: #07391E;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+}
 .confirm {
   width: 50%;
   font-size: 30px;

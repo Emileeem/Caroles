@@ -25,7 +25,7 @@
             <b class="text2"> {{item.descricao}}</b>
             <b class="text"> R${{item.preco}}</b>
           </div>
-          <button class="btn btn-success"> Adicionar</button>
+          <button class="btn btn-success" (click)="setItem(item)"> Adicionar</button>
         </a>
       }
     </div>

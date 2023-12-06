@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { ProductServiceService } from '../services/product-service.service';
 import { ProductDataMenu } from '../data/product-dataMenu';
-import { MatDialog } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { CarrinhoComponent } from '../carrinho/carrinho.component';
 
 @Component({
@@ -23,7 +23,7 @@ export class ProdutosTotemComponent {
   produtos: ProductDataMenu[] = [];
   selectedCategory: string = '';
   selected = ''
-
+  adicionados:any = [];
   getByCategory(categoria: string): void
   {
     if (this.selected == categoria)
@@ -46,12 +46,17 @@ export class ProdutosTotemComponent {
 }
 
   openDialog() {
-    this.dialog.open(CarrinhoComponent);
+    this.dialog.open(CarrinhoComponent, {data: { carrinho: this.adicionados }});
   }
-  
+
+  setItem(item: any){
+    this.adicionados.push(item);
+    console.log(this.adicionados);
+  }
+
   ngOnInit() {
     this.loadAll()
-    }
+  }
 
     loadAll()
     {
