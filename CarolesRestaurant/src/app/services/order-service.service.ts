@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { OrderData } from '../data/order-data';
 import { ApiOrderService } from '../api/api-order.service';
+import { catchError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -19,17 +20,13 @@ export class OrderServiceService {
           callback(null)
         })
   }
-  confirmarPedido(data: OrderData, callback: any)
-  {
-    this.http.post('/orders', data)
-      .subscribe(
-        response => {
-          callback(response);
-        },
-        error => {
-          console.error('Erro ao confirmar pedido', error);
-          callback(null);
-        });
+  confirmarPedido(dadosPedido: any) {
+    return this.http.post('/orders/', dadosPedido).pipe(
+      catchError((error: any) => {
+        console.error('Erro na chamada HTTP:', error);
+        throw error; // Pode ser necessário ajustar o tratamento de erro conforme necessário
+      })
+    );
   }
 
 }

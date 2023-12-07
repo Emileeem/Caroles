@@ -42,6 +42,8 @@ public class OrderController : ControllerBase
         if(errors.Count > 0)
             return BadRequest(errors);
         
+        pedido.HoraPedido = DateTime.Now;
+        pedido.HoraPronto = DateTime.Today;
         await service.Create(pedido);
         return Ok();
     }

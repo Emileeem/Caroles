@@ -2,11 +2,12 @@ import { Component, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { OrderServiceService } from '../services/order-service.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-carrinho',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './carrinho.component.html',
   styleUrl: './carrinho.component.css'
 })
@@ -23,7 +24,14 @@ export class CarrinhoComponent {
   }
 
   calcularTotalPedido() {
-    this.totalPedido = this.carrinho.reduce((total, item) => total + (item.preco * item.quantidade), 0);
+    this.totalPedido = this.carrinho.reduce((total, item) => total + (item.preco), 0);
+  }
+
+  removerItemDoCarrinho(index:number ) {
+    if(index !== -1){
+      this.carrinho.splice(index, 1);
+      this.calcularTotalPedido();
+    }
   }
 
   confirmarPedido() {

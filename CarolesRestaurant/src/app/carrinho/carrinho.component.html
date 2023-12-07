@@ -3,7 +3,7 @@
   <h1> Seu Carrinho: </h1>
   <div class="container nome mt-5">
     <h3>Seu Apelido:</h3>
-    <input type="text" class="form-control  w-25 shadow">
+    <input type="text" class="form-control  w-25 shadow" [(ngModel)]="apelido">
   </div>
   @if (carrinho.length > 0) {
     @for (item of carrinho; track item.id) {
@@ -15,17 +15,16 @@
           <div class="card-body">
             <h5 class="card-title m-2">{{ item.nome }}</h5>
             <p class="card-text m-2">{{ item.descricao }}</p>
-            <button class="btn btn-danger m-5"> -1 </button>
-            <button class="btn btn-success"> +1 </button>
+            <button class="btn btn-danger m-5" (click)="removerItemDoCarrinho(item)"> Excluir </button>
           </div>
         </div>
       </div>
     }
   }
   <div class="botao2">
-    Total: <br /> {{ totalPedido | currency:'BRL' }}
+    Total: {{ totalPedido | currency:'BRL' }} <br />
   </div>
   <div class="botao">
-    <button class="btn btn-success confirm mt-5 mb-5"> Confirmar Pedido </button>
+    <button class="btn btn-success confirm mt-5 mb-5" (click)="confirmarPedido()"> Confirmar Pedido </button>
   </div>
 </div>
